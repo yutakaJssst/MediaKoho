@@ -12,24 +12,93 @@ const awardStories = [
     alt: "エリアマネジメント研究交流会で受賞した深津壮さん",
     category: "建築・都市",
     award: "Area Management Research Award",
+    people: "建築学専攻　深津 壮さん",
     title: "海外の実験的BID制度から、日本のまちづくりへ",
-    text: "シンガポールの制度を詳細に分析し、日本でのエリアマネジメント活用に向けた具体的な政策提案まで踏み込みました。",
+    text: "シンガポールの「Pilot BID Programme」を、制度を試行・検証する実験的BIDとして分析。柔軟な負担金徴収と、政府による補助・伴走支援・調整機能の有効性を整理し、日本での制度普及に向けた政策提案まで踏み込みました。",
   },
   {
     image: "/circular/tree-project-team.jpg",
     alt: "樹木荘・樹木創・樹木葬を提案した学生チームと模型",
     category: "建築・デザイン",
     award: "日本建築学会設計競技 佳作・タジマ奨励賞",
+    people: "海洋建築工学科　江口和李さん、川神爽来さん、藤井光稀さん、横山晃己さん",
     title: "団地がゆっくりと風景へ還る、新しい解体の物語",
-    text: "植物の根の成長を利用し、暮らしを残しながら建物を自然へ還す「穏やかな解体」を提案しました。",
+    text: "植物の根の成長を利用し、暮らしが残る「荘期」、畑をつくる「創期」、自然に還る「葬期」の三段階で団地を解体。住民の生活と世代交代に寄り添いながら、建物が風景へ溶け込む過程を提案しました。",
   },
   {
     image: "/circular/cement-award.jpg",
     alt: "土木学会全国大会で優秀講演者に選ばれた廣瀬裕貴さん",
     category: "土木・環境",
     award: "土木学会全国大会 優秀講演者",
+    people: "土木工学専攻　廣瀬裕貴さん",
     title: "混合セメントの耐久性とCO₂固定を読み解く",
-    text: "混和材による組成変化と劣化の関係を実験で検証し、長寿命化と環境負荷低減を両立する知見を示しました。",
+    text: "産業副産物や廃ガラス微粉末を用いる混合セメントに着目。炭酸化による劣化プロセスと、供用中に吸収・固定できるCO₂量を調べ、長寿命化と環境負荷低減を両立するための知見を示しました。",
+  },
+];
+
+const moreAwards = [
+  {
+    field: "航空宇宙 × AI",
+    award: "Best Oral Presentation Award",
+    person: "航空宇宙工学専攻　喜熨斗理央さん",
+    title: "ニューラルネットワークで同軸二重反転ロータを制御する",
+    text: "上下ロータ間の複雑な空力干渉を学習し、制御パラメータを決める手法を提案。数値シミュレーションで従来手法を上回る制御性能を示しました。",
+  },
+  {
+    field: "機械加工",
+    award: "砥粒加工学会 優秀講演賞",
+    person: "機械工学専攻　野呂章仁さん",
+    title: "研削砥石の仕上がりを左右する条件を可視化",
+    text: "ツルーイング時の切込量が小さいほど砥粒の脱落と砥石摩耗が抑えられ、良好な仕上げ面が得られることを実験で明らかにしました。",
+  },
+  {
+    field: "宇宙輸送",
+    award: "日本設計工学会 学生優秀発表賞",
+    person: "精密機械工学専攻　小野寺隆介さん",
+    title: "空港から宇宙へ向かう機体の最適な飛行経路",
+    text: "ジェットとロケットの燃焼モードを切り替える単段式サブオービタル宇宙機について、搭載量と効率を左右する切替条件と上昇経路を検討しました。",
+  },
+  {
+    field: "電磁界・次世代通信",
+    award: "電子情報通信学会 学生優秀発表賞",
+    person: "電気工学専攻　向田智貴さん",
+    title: "反強磁性体の超高速な動きを複合物理で解析",
+    text: "スピンダイナミクスと電磁界を相互に扱う解析法を提案。THz帯で動作する次世代スピンデバイスへの応用可能性を示しました。",
+  },
+  {
+    field: "省電力AI",
+    award: "電気学会全国大会 優秀論文発表賞",
+    person: "電子工学専攻　山口明伸さん",
+    title: "脳のように履歴を保持する低消費電力回路",
+    text: "スパイキングニューロンの発火頻度変動を使い、過去の情報を保持できることを確認。小型自律ロボットへの搭載を見据えた情報処理モデルです。",
+  },
+  {
+    field: "サイバーセキュリティー",
+    award: "全国型CTFコンテスト 東京会場1位",
+    person: "応用情報工学科　髙士哲生さん",
+    title: "謎解きで競う、実践的な防御と解析の力",
+    text: "脆弱性解析、ネットワーク、暗号技術を継続的に学び、全国7会場とオンラインで同時開催された大会の東京会場で最高成績を収めました。",
+  },
+  {
+    field: "化学工学",
+    award: "分離技術会 学生賞・奨励賞",
+    person: "物質応用化学専攻　山本 凌さん",
+    title: "分けにくいグリーン溶媒を、抽出蒸留で分離する",
+    text: "通常の蒸留では分けにくいメタノールとCPMEに第三の溶剤を加える方法を検討し、実測データから分離プロセスの成立性まで確かめました。",
+  },
+  {
+    field: "交通工学",
+    award: "Best Paper Presentation Award",
+    person: "交通システム工学専攻　市川 遼さん",
+    title: "大型車が信号交差点の容量に与える影響を実測",
+    text: "大型車の混入で発進の遅れが増え、有効青時間も短くなる可能性を提示。従来の算定では交通容量を過大評価する場合があることを示しました。",
+  },
+  {
+    field: "加速器科学",
+    award: "Gold Award Hands-on Training",
+    person: "物理学専攻　原田一輝さん",
+    title: "極短パルスX線を、より高いエネルギーへ",
+    text: "国際チームで3次元シミュレーションに取り組み、アンジュレータの条件を最適化。課題解決力と発表力を含む総合評価で18チーム中5チームに選ばれました。",
   },
 ];
 
@@ -218,15 +287,40 @@ export default function Home() {
                   </div>
                   <div className="story-card-body">
                     <p className="award-name">{story.award}</p>
+                    <p className="story-people">{story.people}</p>
                     <h3>{story.title}</h3>
                     <p>{story.text}</p>
-                    <a href="#feature">
-                      研究ストーリーを読む <Arrow />
+                    <a href="#award-index">
+                      今号の受賞記事を続けて読む <Arrow />
                     </a>
                   </div>
                 </article>
               ))}
             </div>
+
+            <section className="award-index" id="award-index" aria-labelledby="award-index-title">
+              <div className="module-title award-index-heading">
+                <div>
+                  <p className="eyebrow">MORE AWARD STORIES</p>
+                  <h3 id="award-index-title">分野を越えて広がる、9つの挑戦</h3>
+                </div>
+                <p>誌面の研究概要と受賞理由を、Web向けに短く再構成しました。</p>
+              </div>
+              <div className="award-index-grid">
+                {moreAwards.map((story, index) => (
+                  <article className="award-index-card" key={story.title}>
+                    <div className="award-index-meta">
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <p>{story.field}</p>
+                    </div>
+                    <p className="award-index-award">{story.award}</p>
+                    <h4>{story.title}</h4>
+                    <p className="award-index-person">{story.person}</p>
+                    <p>{story.text}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
           </div>
         </section>
 
@@ -257,11 +351,22 @@ export default function Home() {
                 </h3>
                 <p className="byline">数学科教授　橋口 徳一</p>
                 <p>
-                  いろいろな図形と、たくさんの方々との出会い。数学に向き合ってきた研究の歩みを、写真とともにたどります。
+                  家具職人だった父が木材からさまざまな形をつくる姿を見て育ち、中学校の初等幾何から図形の面白さへ。大学では位相幾何学、力学系、葉層構造へと研究を広げ、多くの研究者との出会いが新しい問いにつながっていきました。
                 </p>
-                <a className="button button-outline" href="#career">
-                  研究歴を読む <Arrow />
-                </a>
+                <div className="research-highlights">
+                  <div>
+                    <span>研究の原点</span>
+                    <p>定規とコンパスで描いた測地線の図が、修士研究の新しい結果につながりました。</p>
+                  </div>
+                  <div>
+                    <span>人との接点</span>
+                    <p>土曜トポロジーセミナーやフランス滞在を通じ、葉層構造・力学系・群の研究を発展させました。</p>
+                  </div>
+                  <div>
+                    <span>学生と探る</span>
+                    <p>巨大魔法陣や寺院の算額調査にも取り組み、図形を手で確かめる探究を続けています。</p>
+                  </div>
+                </div>
               </div>
             </article>
 
@@ -275,19 +380,37 @@ export default function Home() {
               </div>
               <div className="lab-grid">
                 <article className="lab-card">
-                  <img src="/circular/nakamura-lab.jpg" alt="仲村研究室のメンバー" />
+                  <img src="/circular/mochizuki-lab.jpg" alt="階段に並ぶ仲村研究室のメンバー" />
                   <div>
-                    <p>交通システム工学科</p>
+                    <p>まちづくり工学科　仲村成貴教授</p>
                     <h4>仲村研究室</h4>
-                    <span>ハードとソフトの融合から創る「未来をつくる」</span>
+                    <span>ハードとソフトの両面から挑む 防災まちづくり</span>
+                    <p className="lab-location">駿河台｜タワー・スコラ12階 S1213室</p>
+                    <p className="lab-summary">
+                      自然現象を「災害」に転じさせず、被害を最小限に抑える仕組みを研究。橋梁・杭基礎・ダムなどの健全性評価と、災害時の応急対応や避難行動の分析を組み合わせます。
+                    </p>
+                    <ul className="lab-points">
+                      <li>構造物のモニタリングと耐震性能評価</li>
+                      <li>VR・3D都市モデル・LiDARによる災害リスクの可視化</li>
+                      <li>教員と学生が「一緒に考え、一緒に取り組む」研究スタイル</li>
+                    </ul>
                   </div>
                 </article>
                 <article className="lab-card">
-                  <img src="/circular/mochizuki-lab.jpg" alt="望月研究室のメンバー" />
+                  <img src="/circular/nakamura-lab.jpg" alt="室内に集まった望月研究室のメンバー" />
                   <div>
-                    <p>精密機械工学科</p>
+                    <p>応用情報工学科　望月寛教授</p>
                     <h4>望月研究室</h4>
-                    <span>ロボットシステムで暮らしと社会を支える</span>
+                    <span>組込みシステムで安全・安心な暮らしを支える</span>
+                    <p className="lab-location">船橋｜2号館4階 244室</p>
+                    <p className="lab-summary">
+                      ソフトウエアでハードウエアに新たな機能を与える組込みシステムを、鉄道信号などの産業システムへ応用。回路・ネットワーク・信号処理を横断して学びます。
+                    </p>
+                    <ul className="lab-points">
+                      <li>鉄道信号の多情報化と高機能化</li>
+                      <li>企業との共同研究で実システムへの応用を検討</li>
+                      <li>展示会で学生自身がデモを説明し、技術者と議論</li>
+                    </ul>
                   </div>
                 </article>
               </div>
@@ -299,19 +422,19 @@ export default function Home() {
               </div>
               <div className="culture-copy">
                 <p className="eyebrow">CULTURE</p>
-                <h3 id="culture-title">研究の外側にも、好奇心を。</h3>
+                <h3 id="culture-title">映画と展示会から、研究の外へ。</h3>
                 <ul>
                   <li>
                     <span>MOVIE</span>
-                    映画から考える科学と未来
+                    <div><strong>『BLUE GIANT』</strong><p>仲間と限界を越えていく熱量から、何かに打ち込むことの尊さを考える。</p></div>
                   </li>
                   <li>
-                    <span>BOOK</span>
-                    教員・学生が選ぶ今号の一冊
+                    <span>MOVIE</span>
+                    <div><strong>『バック・トゥ・ザ・フューチャー』</strong><p>光・音響・通信・計測を支える電気工学と、科学技術が開く未来に目を向ける。</p></div>
                   </li>
                   <li>
                     <span>EVENT</span>
-                    第69回理工学部学術講演会レポート
+                    <div><strong>NEW環境展</strong><p>無機材料化学研究室が、CO₂固定化技術と炭酸カルシウムの有効利用を来場者へ紹介。</p></div>
                   </li>
                 </ul>
               </div>
