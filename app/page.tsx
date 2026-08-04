@@ -6,9 +6,12 @@ export const metadata: Metadata = {
     "日本大学理工学部の研究、学生、キャンパスの今を、ウェブで読みやすく届ける理工サーキュラー。",
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const asset = (path: string) => `${basePath}${path}`;
+
 const awardStories = [
   {
-    image: "/circular/bid-award.jpg",
+    image: asset("/circular/bid-award.jpg"),
     alt: "エリアマネジメント研究交流会で受賞した深津壮さん",
     category: "建築・都市",
     award: "Area Management Research Award",
@@ -17,7 +20,7 @@ const awardStories = [
     text: "シンガポールの「Pilot BID Programme」を、制度を試行・検証する実験的BIDとして分析。柔軟な負担金徴収と、政府による補助・伴走支援・調整機能の有効性を整理し、日本での制度普及に向けた政策提案まで踏み込みました。",
   },
   {
-    image: "/circular/tree-project-team.jpg",
+    image: asset("/circular/tree-project-team.jpg"),
     alt: "樹木荘・樹木創・樹木葬を提案した学生チームと模型",
     category: "建築・デザイン",
     award: "日本建築学会設計競技 佳作・タジマ奨励賞",
@@ -26,7 +29,7 @@ const awardStories = [
     text: "植物の根の成長を利用し、暮らしが残る「荘期」、畑をつくる「創期」、自然に還る「葬期」の三段階で団地を解体。住民の生活と世代交代に寄り添いながら、建物が風景へ溶け込む過程を提案しました。",
   },
   {
-    image: "/circular/cement-award.jpg",
+    image: asset("/circular/cement-award.jpg"),
     alt: "土木学会全国大会で優秀講演者に選ばれた廣瀬裕貴さん",
     category: "土木・環境",
     award: "土木学会全国大会 優秀講演者",
@@ -107,21 +110,21 @@ const archive = [
     no: "207",
     season: "2025 WINTER",
     title: "女性活躍応援企業を探してみよう！",
-    image: "/circular/no207-cover.webp",
+    image: asset("/circular/no207-cover.webp"),
     tags: ["キャリア", "ダイバーシティ"],
   },
   {
     no: "206",
     season: "2025 AUTUMN",
     title: "日本大学の短期海外研修",
-    image: "/circular/no206-cover.webp",
+    image: asset("/circular/no206-cover.webp"),
     tags: ["グローバル", "学生生活"],
   },
   {
     no: "205",
     season: "2025 SUMMER",
     title: "これ、何ですか？",
-    image: "/circular/no205-cover.webp",
+    image: asset("/circular/no205-cover.webp"),
     tags: ["研究設備", "キャンパス"],
   },
 ];
@@ -150,7 +153,7 @@ export default function Home() {
         </div>
         <div className="shell brand-row">
           <a className="brand" href="https://www.cst.nihon-u.ac.jp/" aria-label="日本大学理工学部公式サイト">
-            <img src="/brand/cst-logo.svg" alt="日本大学理工学部" />
+            <img src={asset("/brand/cst-logo.svg")} alt="日本大学理工学部" />
           </a>
           <p className="publication-name">
             <span>CIRCULAR</span>
@@ -206,7 +209,7 @@ export default function Home() {
               <div className="cover-shadow" />
               <img
                 className="latest-cover"
-                src="/circular/no208-cover.webp"
+                src={asset("/circular/no208-cover.webp")}
                 alt="理工サーキュラー No.208 この学会賞がスゴイ！表紙"
               />
               <p className="issue-stamp">
@@ -247,7 +250,7 @@ export default function Home() {
             <article className="lead-story">
               <figure>
                 <img
-                  src="/circular/stand-net-team.jpg"
+                  src={asset("/circular/stand-net-team.jpg")}
                   alt="Stand NETを提案した学生チームと模型"
                 />
                 <figcaption>
@@ -337,7 +340,7 @@ export default function Home() {
             <article className="research-feature" id="career">
               <div className="research-photo">
                 <img
-                  src="/circular/hashiguchi-research.jpg"
+                  src={asset("/circular/hashiguchi-research.jpg")}
                   alt="フィールドワーク中の数学科教授 橋口徳一先生"
                 />
                 <span>MY RESEARCH HISTORY</span>
@@ -380,7 +383,7 @@ export default function Home() {
               </div>
               <div className="lab-grid">
                 <article className="lab-card">
-                  <img src="/circular/mochizuki-lab.jpg" alt="階段に並ぶ仲村研究室のメンバー" />
+                  <img src={asset("/circular/mochizuki-lab.jpg")} alt="階段に並ぶ仲村研究室のメンバー" />
                   <div>
                     <p>まちづくり工学科　仲村成貴教授</p>
                     <h4>仲村研究室</h4>
@@ -397,7 +400,7 @@ export default function Home() {
                   </div>
                 </article>
                 <article className="lab-card">
-                  <img src="/circular/nakamura-lab.jpg" alt="室内に集まった望月研究室のメンバー" />
+                  <img src={asset("/circular/nakamura-lab.jpg")} alt="室内に集まった望月研究室のメンバー" />
                   <div>
                     <p>応用情報工学科　望月寛教授</p>
                     <h4>望月研究室</h4>
@@ -418,7 +421,7 @@ export default function Home() {
 
             <section className="culture-row" id="culture" aria-labelledby="culture-title">
               <div className="culture-image">
-                <img src="/circular/culture-exhibition.jpg" alt="学生研究展示のブース" />
+                <img src={asset("/circular/culture-exhibition.jpg")} alt="学生研究展示のブース" />
               </div>
               <div className="culture-copy">
                 <p className="eyebrow">CULTURE</p>
@@ -453,7 +456,7 @@ export default function Home() {
             </header>
             <div className="archive-layout">
               <article className="archive-latest">
-                <img src="/circular/no208-cover.webp" alt="No.208 表紙" />
+                <img src={asset("/circular/no208-cover.webp")} alt="No.208 表紙" />
                 <div>
                   <p>No.208 / 2026 SPRING</p>
                   <h3>2025年度版 この学会賞がスゴイ！</h3>
@@ -500,7 +503,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="shell footer-main">
-          <img src="/brand/cst-logo.svg" alt="日本大学理工学部" />
+          <img src={asset("/brand/cst-logo.svg")} alt="日本大学理工学部" />
           <div>
             <p>理工サーキュラー</p>
             <nav aria-label="フッターメニュー">
