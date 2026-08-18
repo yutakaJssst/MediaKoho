@@ -401,6 +401,7 @@ summary:focus-visible {
 .feature-section,
 .issue-contents,
 .archive-section,
+.history-section,
 .about-section {
   padding: 120px 0;
 }
@@ -1049,10 +1050,140 @@ summary:focus-visible {
   font-size: 10px;
 }
 
-.archive-button {
-  margin: 56px auto 0;
+.earlier-issues {
+  margin-top: 88px;
+  padding-top: 56px;
+  border-top: 1px solid var(--ink);
+}
+
+.earlier-issues .module-title > p {
+  max-width: 420px;
+  margin: 0;
+  color: var(--soft-ink);
+  font-size: 13px;
+}
+
+.earlier-issue-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--line);
+}
+
+.earlier-issue {
+  min-width: 0;
+  padding: 26px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.earlier-issue > div {
   display: flex;
-  width: max-content;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.earlier-issue p,
+.earlier-issue span {
+  margin: 0;
+  color: var(--cst-dark);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.earlier-issue h3 {
+  margin: 18px 0 24px;
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.earlier-issue ul {
+  margin: 0;
+  padding: 14px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.earlier-issue li {
+  padding: 3px 8px;
+  background: var(--cst-pale);
+  color: var(--cst-dark);
+  font-size: 10px;
+}
+
+.history-section {
+  background: var(--ink);
+  color: white;
+}
+
+.history-section .compact-heading {
+  border-bottom-color: rgba(255, 255, 255, 0.34);
+}
+
+.history-section .eyebrow {
+  color: #7de1ee;
+}
+
+.history-section .section-heading > p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.history-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.26);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  list-style: none;
+}
+
+.history-list li {
+  min-width: 0;
+  padding: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.history-year {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.history-year strong {
+  color: #7de1ee;
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.history-year span {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.history-list h3 {
+  margin: 28px 0 14px;
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.55;
+}
+
+.history-list p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  line-height: 1.9;
 }
 
 .about-section {
@@ -1194,6 +1325,11 @@ summary:focus-visible {
   .archive-layout {
     gap: 34px;
   }
+
+  .earlier-issue-grid,
+  .history-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 800px) {
@@ -1307,6 +1443,7 @@ summary:focus-visible {
   .feature-section,
   .issue-contents,
   .archive-section,
+  .history-section,
   .about-section {
     padding: 78px 0;
   }
@@ -1363,6 +1500,11 @@ summary:focus-visible {
 
   .archive-latest {
     grid-template-columns: 0.72fr 1fr;
+  }
+
+  .earlier-issue-grid,
+  .history-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .about-layout {
@@ -1478,6 +1620,11 @@ summary:focus-visible {
 
   .archive-latest > div {
     padding: 32px 26px 38px;
+  }
+
+  .earlier-issue-grid,
+  .history-list {
+    grid-template-columns: 1fr;
   }
 
   .footer-main {

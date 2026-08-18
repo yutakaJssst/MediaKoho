@@ -108,7 +108,7 @@ const moreAwards = [
 const archive = [
   {
     no: "207",
-    season: "2025 WINTER",
+    season: "2026 WINTER",
     title: "女性活躍応援企業を探してみよう！",
     image: asset("/circular/no207-cover.webp"),
     tags: ["キャリア", "ダイバーシティ"],
@@ -126,6 +126,72 @@ const archive = [
     title: "これ、何ですか？",
     image: asset("/circular/no205-cover.webp"),
     tags: ["研究設備", "キャンパス"],
+  },
+];
+
+const earlierIssues = [
+  {
+    no: "204",
+    season: "2025 SPRING",
+    title: "2024年度版 この学会賞がスゴイ！",
+    tags: ["研究", "受賞"],
+  },
+  {
+    no: "203",
+    season: "2025 WINTER",
+    title: "就活女子会2025",
+    tags: ["就職", "キャリア"],
+  },
+  {
+    no: "202",
+    season: "2024 AUTUMN",
+    title: "山本理顕「地域社会圏」とは――2024年プリツカー賞受賞記念",
+    tags: ["建築", "地域社会"],
+  },
+  {
+    no: "201",
+    season: "2024 SUMMER",
+    title: "撮影協力 日本大学理工学部",
+    tags: ["映像", "キャンパス"],
+  },
+  {
+    no: "200",
+    season: "2024 SPRING",
+    title: "『理工サーキュラー』200号の軌跡",
+    tags: ["記念号", "歴史"],
+  },
+];
+
+const history = [
+  {
+    year: "1971",
+    issue: "No.1",
+    title: "理工サーキュラー創刊",
+    text: "学部の方針や研究・教育の動きを伝える、理工学部の情報誌として歩みを始めました。",
+  },
+  {
+    year: "1998",
+    issue: "No.98",
+    title: "各号特集方式へ",
+    text: "一人でも多くの学生・教職員に読まれることを目指し、毎号テーマを掘り下げる構成へ刷新しました。",
+  },
+  {
+    year: "2009",
+    issue: "No.140",
+    title: "連載をリニューアル",
+    text: "学生、教員、研究、キャンパスを多彩な角度から紹介する連載を充実させました。",
+  },
+  {
+    year: "2012",
+    issue: "No.152",
+    title: "A4・オールカラーへ",
+    text: "B5横組みからA4縦組みに変更。誌面全体をオールカラーへとリニューアルしました。",
+  },
+  {
+    year: "2018",
+    issue: "No.177",
+    title: "研究室を訪ねる",
+    text: "学生が研究に取り組む姿を継続的に伝える「CST LAB CATALOG」が始まりました。",
   },
 ];
 
@@ -165,7 +231,7 @@ export default function Home() {
               <a href="#feature">特集</a>
               <a href="#contents">連載・研究室</a>
               <a href="#archive">バックナンバー</a>
-              <a href="#about">サーキュラーについて</a>
+              <a href="#history">歩み・サーキュラーについて</a>
             </nav>
           </details>
         </div>
@@ -175,7 +241,7 @@ export default function Home() {
             <a href="#feature">特集</a>
             <a href="#contents">研究・ラボ</a>
             <a href="#archive">バックナンバー</a>
-            <a href="#about">サーキュラーについて</a>
+            <a href="#history">歩み・サーキュラーについて</a>
           </div>
         </nav>
       </header>
@@ -379,7 +445,7 @@ export default function Home() {
                   <p className="eyebrow">CST LAB CATALOG</p>
                   <h3 id="labs-title">研究室を訪ねる</h3>
                 </div>
-                <a href="#labs">研究室の記事一覧 <Arrow /></a>
+                <a href="#labs">No.208掲載の2研究室 <Arrow /></a>
               </div>
               <div className="lab-grid">
                 <article className="lab-card">
@@ -481,9 +547,55 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <a className="button button-dark archive-button" href="#archive">
-              すべての号・記事を探す <Arrow />
-            </a>
+            <section className="earlier-issues" id="archive-index" aria-labelledby="archive-index-title">
+              <div className="module-title">
+                <div>
+                  <p className="eyebrow">ISSUE INDEX / No.200—204</p>
+                  <h3 id="archive-index-title">さらにさかのぼる</h3>
+                </div>
+                <p>No.200以降の特集を、号数とテーマから振り返ります。</p>
+              </div>
+              <div className="earlier-issue-grid">
+                {earlierIssues.map((issue) => (
+                  <article className="earlier-issue" key={issue.no}>
+                    <div>
+                      <p>No.{issue.no}</p>
+                      <span>{issue.season}</span>
+                    </div>
+                    <h3>{issue.title}</h3>
+                    <ul aria-label={`No.${issue.no}の記事テーマ`}>
+                      {issue.tags.map((tag) => (
+                        <li key={tag}>{tag}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section className="history-section" id="history">
+          <div className="shell">
+            <header className="section-heading compact-heading">
+              <div>
+                <p className="eyebrow">HISTORY OF CIRCULAR</p>
+                <h2>理工サーキュラーの歩み</h2>
+              </div>
+              <p>1971年の創刊から、時代に合わせて誌面と企画を更新してきました。</p>
+            </header>
+            <ol className="history-list">
+              {history.map((item) => (
+                <li key={item.issue}>
+                  <div className="history-year">
+                    <strong>{item.year}</strong>
+                    <span>{item.issue}</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
@@ -492,9 +604,9 @@ export default function Home() {
             <p className="about-mark">C</p>
             <div>
               <p className="eyebrow">ABOUT CIRCULAR</p>
-              <h2>教員が企画し、日大理工の今を伝える。</h2>
+              <h2>日大理工の知と人を、時代に合わせて伝える。</h2>
               <p>
-                「理工サーキュラー」は、日本大学理工学部の教員自らが企画・編集に携わり、学生に伝えたい知識や情報を発信する季刊広報誌です。研究の最新話題、社会課題、学生生活のヒントを、WEBならではの読みやすさで届けます。
+                「理工サーキュラー」は、日本大学理工学部広報委員会が編集・発行する季刊広報誌です。研究の最新話題、学生や卒業生の挑戦、研究室、キャンパスの文化を紹介しています。Web版では、紙面の特集や連載を、テーマや人物から読みやすく再編集して届けます。
               </p>
             </div>
           </div>
@@ -509,6 +621,7 @@ export default function Home() {
             <nav aria-label="フッターメニュー">
               <a href="#latest">最新号</a>
               <a href="#archive">バックナンバー</a>
+              <a href="#history">サーキュラーの歩み</a>
               <a href="https://www.cst.nihon-u.ac.jp/contact/">お問い合わせ</a>
             </nav>
           </div>
