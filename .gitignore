@@ -40,3 +40,8 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# 会議資料・意見書の作業ファイル（公開しない）
+openCampusPlannning/*
+!openCampusPlannning/令和9年度OC日程等に関する意見_応用情報工学科_更新版2.docx
+!openCampusPlannning/令和9年度OC日程等に関する意見_応用情報工学科_更新版2_MS明朝.pdf
